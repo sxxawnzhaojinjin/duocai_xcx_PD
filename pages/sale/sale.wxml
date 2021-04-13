@@ -1,0 +1,82 @@
+<!--pages/sale/sale.wxml-->
+<view class="bg">
+
+	<!--Tab布局-->
+	<view class='title'>
+		<view class="{{0 == currentIndex ? 'title-sel-selected' : 'title-sel'}}" bindtap='titleClick' data-idx='0'>
+			<text>已售</text>
+			<hr class="line-style" />
+		</view>
+
+		<view class="{{1 == currentIndex ? 'title-sel-selected' : 'title-sel'}}" bindtap='titleClick' data-idx='1'>
+			<text>挂单</text>
+			<hr class="line-style" />
+		</view>
+
+	</view>
+	<view class="list_view"/>
+
+
+	<view wx:for="{{list}}" wx:key="unique" class="list_bg" bindtap="itemClick" data-item="{{item}}">
+		<view class="headr">
+			<view class="detail payType name">
+			  {{item.customerName}}
+			</view>
+			<view class="detail">
+				{{item.settlementMethod}}
+			</view>
+		</view>
+
+		<!-- <view class="content">
+			<view class="upText price">
+				¥{{item.amount}}
+			</view>
+		</view> -->
+
+		<view class="headr">
+			<view class="detail">
+				{{item.createTime}}
+			</view>
+			<view class="detail payType">
+				<view class="upText price">
+					¥{{item.amount}}
+				</view>
+				<view class="upText">
+					共<text class="quantity">{{item.quantity}}</text>件
+				</view>
+		
+			</view>
+		</view>
+
+		<view class="pic">
+				<image wx:for="{{foo.list(item.pictureUrls)}}" src="{{item ? item : '../../images/clothes.png'}}" class="img" wx:key="index"></image>
+		</view>	
+
+	</view>
+
+</view>
+
+
+<view class="up_bg">
+
+	<view class="up_item" bindtap="addDisClick">
+		<image src="../../images/addDis.png" class="up_icon"></image>
+	</view>
+</view>
+
+<wxs module="foo">
+	var list = function(val) {
+		if(val != '' || val != undefined || val != null){
+			var pic = val.split(",")
+			return pic;
+		}
+	}
+	module.exports = {
+		list: list
+	}
+</wxs>
+
+
+
+
+

@@ -1,0 +1,22 @@
+<view class="cart">
+	<view class="content" wx:if="{{dataList.length>0}}">
+		<!-- 通过 isTouchMove 的值来对应移动位置-->
+		<view class="item {{item.isTouchMove ? 'touch-move-active' : ''}}" wx:for="{{dataList}}" wx:key="index">
+			<view class="item-left customer-list" data-id="{{item.customerId}}" data-index='{{index}}' bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd" animation='{{item.animation}}' bindtap="goCustomerInfo">
+				<view class="customer-left">
+					<text>{{item.customerName}}</text>
+					<view class="customer-right">
+						<image mode="aspectFit" class="next" style="margin-left:0rpx" src="{{item.gender == '0'?'../../images/boy.png':'../../images/gril.png'}}"></image>
+						<text class="gender">{{item.address || ""}}</text>
+					</view>
+				</view>
+				<view class="customer-right">
+					<view>{{item.contactPhone || ""}}</view>
+					<image mode="aspectFit" class="next" src="../../images/next.png"></image>
+				</view>
+			</view>
+			<view class="delete" data-id="{{item.customerId}}" bindtap="delItem">删除</view>
+		</view>
+	</view>
+	<view class="common_button" bindtap="goCustomerInfo">新增客户</view>
+</view>

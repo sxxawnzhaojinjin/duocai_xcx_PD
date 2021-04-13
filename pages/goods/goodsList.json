@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "货品管理",
+  "usingComponents": {},
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance":50
+}

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "入库单",
+  "usingComponents": {},
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance":50
+}

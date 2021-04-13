@@ -1,0 +1,6 @@
+<view class="success_container">
+  <view>
+    <image src="../../images/dui.png" class="img"></image>
+  </view>
+  <view>入库成功</view>
+</view>

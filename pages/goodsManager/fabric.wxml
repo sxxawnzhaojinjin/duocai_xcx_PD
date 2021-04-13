@@ -1,0 +1,51 @@
+<!-- sizeName   sizeId 需要更新   -->
+
+<view class="content">
+
+<view class="addBtn" bindtap="addGroup">
+    添加分组
+</view>
+<view class="colorType_box" wx:for="{{list}}" wx:for-item="item" wx:key="unique" wx:for-index="idx" >
+    <view class="header_bg">
+        <view class="btn" bindlongpress="deleteGroup" data-group="{{item}}">
+            {{item.grouping}}
+        </view>
+        <view wx:if="{{!oneSelect}}" class="btn select" data-group="{{item.grouping}}" bindtap="allSelect">
+            全选
+        </view>
+        <view class="btn add" bindtap="addItem" data-item="{{item}}">
+            添加
+        </view>
+    </view>
+
+    <view class="child_bg">
+        <view wx:for="{{item.measures}}" wx:for-item="childItem" wx:key="unique" wx:for-index="childIdx">
+            <view class=" btn chile_item {{childItem.isSelect?'itemSelect':'itemUnSelect'}}" bindlongpress="deleteItem" bindtap="selectItem" data-group="{{item.grouping}}" data-item="{{childItem.materialsName}}" data-itemid="{{childItem.materialsId}}">
+                {{childItem.materialsName}}
+            </view>
+        </view>
+    </view>
+
+
+</view>
+<view class="common_button" bindtap="submit">选好了</view>
+<modal hidden="{{!isShowGroup}}" title="请输入分组名" 
+     confirm-text="确定" cancel-text="取消" bindcancel="cancelModal" 
+     bindconfirm="groupConfirm">
+ <input type='text' placeholder="请输入内容" value="{{groupName}}" bindinput="changeGroupName" auto-focus maxlength="100"/>
+</modal>
+<modal hidden="{{!isShowItem}}" title="请输入分类名" 
+     confirm-text="确定" cancel-text="取消" bindcancel="cancelModal" 
+     bindconfirm="itemConfirm">
+ <input type='text' placeholder="请输入内容" value="{{itemName}}" bindinput="changeItemName" auto-focus maxlength="100"/>
+</modal>
+
+<modal hidden="{{!isShowDeleteGroup}}" title="确定删除该分组" 
+     confirm-text="确定" cancel-text="取消" bindcancel="cancelDelete" 
+     bindconfirm="deleteGroupConfirm">
+</modal>
+<modal hidden="{{!isShowDeleteItem}}" title="确定删除该项" 
+     confirm-text="确定" cancel-text="取消" bindcancel="cancelDelete" 
+     bindconfirm="deleteItemConfirm">
+</modal>
+</view>

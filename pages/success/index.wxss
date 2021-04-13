@@ -1,0 +1,23 @@
+page {
+  background-color: #ffffff;
+}
+
+.success_container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  /* justify-content: center; */
+  flex-flow: column;
+  align-items: center;
+  font-size: 30rpx;
+}
+
+.success_container view:nth-child(1) {
+  margin-top: 200rpx;
+  margin-bottom: 20rpx;
+}
+
+.img {
+  width: 200rpx;
+  height: 200rpx;
+}

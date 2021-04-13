@@ -1,0 +1,44 @@
+/* pages/selectUser/selectUser.wxss */
+.bg{
+  display: flex;
+  flex-direction: column;
+}
+.list_bg{
+  display: flex;
+  margin: 5rpx ;
+  flex:1;
+  flex-direction: column;
+}
+.list_item{
+  flex:1;
+  display: flex;
+  font-size: 28rpx;
+  color:#333;
+  justify-content: space-between;
+  background-color: #FFF;
+  border-radius: 5rpx;
+  padding:22rpx 22rpx;
+  margin-top: 5rpx;
+
+}
+.name{
+  display: flex;
+  align-items: center;
+}
+.phone{
+  text-align: right;
+}
+.icon{
+  width:30rpx;
+  height:30rpx;
+  margin-right: 22rpx;
+}
+.right{
+  display: flex;
+  flex-direction: column;
+
+}
+.detail{
+  font-size: 20rpx;
+  color:#999;
+}

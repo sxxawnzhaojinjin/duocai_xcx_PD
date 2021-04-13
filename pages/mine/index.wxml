@@ -1,0 +1,53 @@
+<!--pages/mine/index.wxml-->
+<view class="bg">
+	<image class="bg_image" src="../../images/bg.png"></image>
+	<view mode="aspectFit" class="header" src="../../images/bg.png">
+		<image class="user" src="../../images/shop.png"></image>
+		<view class="lab">{{storeName}}</view>
+	</view>
+
+
+
+<navigator class="item"  url="../../pages/goods/goodsList" hover-class="navigator-hover">
+		<image class="icon" src="../../images/goods.png"></image>
+		<view class="text">货品管理</view>
+		<image  mode="aspectFit" class="icon" src="../../images/next.png"></image>
+</navigator>
+
+	<navigator class="item"  url="../../pages/back/backList" hover-class="navigator-hover">
+		<image class="icon" src="../../images/backOrder.png"></image>
+		<view class="text">退货单</view>
+		<image  mode="aspectFit" class="icon" src="../../images/next.png"></image>
+	</navigator>
+
+  <!-- <navigator class="item" url="../../pages/finance/finance" hover-class="navigator-hover">
+		<image class="icon" src="../../images/tongji.png"></image>
+		<view class="text">财务统计</view>
+		<image  mode="aspectFit" class="icon" src="../../images/next.png"></image>
+	</navigator> -->
+
+  <navigator class="item" url="../../pages/customer/customer" hover-class="navigator-hover">
+		<image class="icon" src="../../images/customer.png"></image>
+		<view class="text">客户管理</view>
+		<image  mode="aspectFit" class="icon" src="../../images/next.png"></image>
+	</navigator>
+
+	<!-- <navigator class="item" url="../../pages/customerAccount/customerAccountList" hover-class="navigator-hover">
+		<image class="icon" src="../../images/customer.png"></image>
+		<view class="text">客户对账</view>
+		<image  mode="aspectFit" class="icon" src="../../images/next.png"></image>
+	</navigator> -->
+		<!-- <view class="item" bindtap="changePassword">
+		<image class="icon" src="../../images/info.png"></image>
+		<view class="text">修改密码</view>
+	</view> -->
+
+	<!-- <view class="item">
+		<image class="icon" src="../../images/info.png"></image>
+		<view class="text">关于我们</view>
+	</view> -->
+
+	<view class="button" bindtap="exitApp">
+		退出登录
+	</view>
+</view>

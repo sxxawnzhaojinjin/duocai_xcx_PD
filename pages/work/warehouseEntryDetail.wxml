@@ -1,0 +1,39 @@
+<view class="contain">
+	<!-- <view class="contain_title" wx:if="{{false}}">商品</view> -->
+	<block wx:for="{{detail}}" wx:for-item="item" wx:for-index="idx" wx:key="*this">
+		<view class="contain_cgry" wx:if="{{idx == 0}}">采购人员:{{item.byUser == null ? '' : item.byUser}}</view>
+		<view class="contain_item">
+			<view class="item_image">
+				<image src="{{item.itemPhoto==null?'../../images/clothes.png':item.itemPhoto}}" class="image"></image>
+				<view>
+					<view class="text">{{item.skuName}}</view>
+					<view class="text">{{item.itemNo}}</view>
+				</view>
+			</view>
+			<view class="item_contain">
+				<view class="item_product">
+					<text class="text1">货号</text>
+					<text class="text2">尺寸</text>
+					<text class="text3">颜色</text>
+					<text class="text4">入库数量</text>
+				</view>
+				<view class="item_product" wx:for="{{item.skus}}" wx:for-item="child" wx:key="*this">
+					<text class="text1">{{child.productCode}}</text>
+					<text class="text2">{{child.skuSize}}</text>
+					<text class="text3">{{child.colour}}</text>
+					<view class="text4">
+						{{child.quantity}}
+					</view>
+				</view>
+			</view>
+		</view>
+	</block>
+	<!-- <view class="pos_fixed" wx:if="{{false}}">
+		<view class="number">数量：150</view>
+		<view class="confirm">
+			<view class="confirm_btn" bindtap="confirm">入库</view>
+			<view class="sprit"></view>
+			<view class="confirm_btn" bindtap="confirm">打印入库单</view>
+		</view>
+	</view> -->
+</view>

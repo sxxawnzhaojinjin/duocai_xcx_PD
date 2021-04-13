@@ -1,0 +1,21 @@
+<!--pages/goods/seleteType.wxml-->
+<view class="bg">
+	<view class="title">
+		<view>分类</view>
+		<view class="right">尺码</view>
+		
+	</view>
+	<view class="list_bg">
+		<scroll-view scroll-y="true" style="height: {{sc_height - 80}}px" class="list_left {{isShowLeft?'':'hide'}}">
+			<view data-item="{{item}}" bindtap="seletType_a" class="list_item {{item.isSelect?'select':''}}" wx:for="{{list}}" wx:key="unique">{{item.name}}</view>
+		</scroll-view>
+		<!-- <scroll-view wx:if="{{isSelectType}}" scroll-y="true" style="height: {{sc_height - 80}}px" class="list_left">
+			<view data-item="{{item}}" bindtap="seletType_b" class="list_item {{item.isSelect?'select':''}}" wx:for="{{list_a}}" wx:key="unique">{{item.categoryName}}</view>
+		</scroll-view> -->
+		<view class="size_box">
+			<view wx:for="{{sizeList}}" data-item="{{item}}" bindtap="selectSize" class="sizeItem {{item.isSelect?'select':''}}">{{item.name}}</view>
+		</view>
+
+	</view>
+	<view bindtap="submit" class="common_button">确定</view>
+</view>

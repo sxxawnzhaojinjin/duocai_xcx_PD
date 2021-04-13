@@ -1,0 +1,141 @@
+/* pages/sale/sale.wxss */
+.title {
+  position: fixed;
+  width: 100%;
+  height: 88rpx;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.title-sel {
+  color: #24272c;
+  font-size: 32rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title-sel .line-style {
+  background: #fff;
+  height: 6rpx;
+  width: 90rpx;
+  position: relative;
+  margin-top: 10rpx;
+}
+
+.title-sel-selected {
+  color: #0054B9;
+  font-size: 32rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title-sel-selected .line-style {
+  background: #0054B9;
+  height: 6rpx;
+  width: 90rpx;
+  position: relative;
+  margin-top: 10rpx;
+}
+.none{
+  background-color: transparent;
+}
+
+.up_bg {
+  position: fixed;
+  bottom: 80rpx;
+  right: 50rpx;
+  z-index: 22;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  justify-items: center;
+  flex-direction: column;
+}
+.up_item{
+  display: flex;
+  border-radius: 40rpx;
+  background-color: #1A50B2;
+  width: 70rpx;
+  height: 70rpx;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  margin-top: 20rpx;
+}
+.up_icon{
+  width: 40rpx;
+  height: 40rpx;
+}
+.bg{
+  display: flex;
+  flex-direction: column;
+}
+.list_view{
+  margin-top: 90rpx;
+}
+.list_bg{
+  display: flex;
+  background-color: #FFF;
+  margin:5rpx 20rpx;
+  flex-direction: column;
+  padding:20rpx;
+  border-radius: 5rpx;
+  font-size: 28rpx;
+}
+.headr{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.detail{
+  color:#333;
+  /* font-size: 24rpx; */
+}
+.content{
+  display: flex;
+  justify-content: flex-end;
+  /* margin: 10rpx 0rpx; */
+  color:#333;
+}
+.upText{
+  margin-left: 20rpx;
+  /* color:#1A50B2; */
+  font-size: 30rpx;
+  text-align: right;
+
+}
+.payType{
+  color: #333;
+}
+.name, .price{
+  font-size: 36rpx;
+  font-weight: 700;
+  text-align: right;
+  /* color: #1A50B2; */
+}
+.quantity{
+  color: #1A50B2;
+  font-size: 28rpx;
+}
+.price{
+  color: #ec7259;
+}
+
+.pic{
+  padding-top: 20rpx;
+}
+.pic .img{
+  /*
+  border: 2rpx solid #ececec;
+  */
+  vertical-align: middle;
+  margin-right: 20rpx;
+  height: 120rpx;
+  width: 120rpx;
+  border-radius: 10rpx;
+  background-color: rgba(255, 255, 158, 0.514);
+}

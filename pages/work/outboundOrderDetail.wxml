@@ -1,0 +1,31 @@
+<!--pages/work/outboundOrderDetail.wxml-->
+<view class="contain">
+	<view class="contain_title" wx:if="{{false}}">商品</view>
+	<view class="contain_item">
+		<view class="item_image">
+			<image src="../../images/customer.png" class="image"></image>
+			<view>
+				<view class="text">工业园</view>
+				<view class="text">1G579860</view>
+			</view>
+		</view>
+		<view class="item_contain">
+			<view class="item_product">
+				<text class="text1">货号</text>
+				<text class="text2">尺寸</text>
+				<text class="text2">颜色</text>
+				<text class="text3">入库数量</text>
+			</view>
+			<view class="item_product">
+				<text class="text1">1G579860342664</text>
+				<text class="text2">XL</text>
+				<text class="text2">浅色</text>
+				<text class="text3">100</text>
+			</view>
+		</view>
+	</view>
+	<view class="pos_fixed">
+	    <view class="number">数量：150</view>
+			<view class="confirm_btn" bindtap="confirm">打印单据</view>
+		</view>
+</view>

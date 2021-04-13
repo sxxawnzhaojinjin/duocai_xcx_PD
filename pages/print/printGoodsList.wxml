@@ -1,0 +1,87 @@
+<view class="printGoodsList_container">
+  <view class="nav">
+    <view class="box">
+      <view class="input_box">
+        <label class="label">款号</label>
+        <view class="input_list">
+          <input type="text" placeholder="请输入款号" class="input" value="{{search_itemNo}}" bindinput="itemNo_input"
+            maxlength="40"/>
+          <image src="../../images/print/remove.png" class="remove_icon" wx:if="{{search_itemNo}}" catchtap="removeDate"
+            :hover-stop-propagation="true" data-name="search_itemNo">
+          </image>
+        </view>
+      </view>
+      <view class="input_box2">
+        <label class="label2">货号</label>
+        <view class="input_list">
+          <input type="text" placeholder="请输入货号" class="input2" value="{{search_productCode}}"
+            bindinput="productCode_input" maxlength="40"/>
+          <image src="../../images/print/remove.png" class="remove_icon" wx:if="{{search_productCode}}"
+            catchtap="removeDate" :hover-stop-propagation="true" data-name="search_productCode">
+          </image>
+        </view>
+      </view>
+    </view>
+    <view class="box">
+      <view class="input_box">
+        <label class="label">货品名称</label>
+        <view class="input_list">
+          <input type="text" placeholder="请输入货品名称" class="input" value="{{search_skuName}}" bindinput="skuName_input"
+            maxlength="40"/>
+          <image src="../../images/print/remove.png" class="remove_icon" wx:if="{{search_skuName}}"
+            catchtap="removeDate" :hover-stop-propagation="true" data-name="search_skuName">
+          </image>
+        </view>
+      </view>
+      <view>
+        <view class="input_search" catchtap="searchBtn">搜索</view>
+      </view>
+      
+    </view>
+  </view>
+
+  <!-- 无数据 -->
+  <view class="noData_box" wx:if="{{dataList.length == 0}}">
+    <view class="noData_info">
+      <view>
+        <image mode="aspectFit" src="../../images/print/noData.png" class="noData_img"></image>
+      </view>
+      <view class="noData_text">没有搜索到相关商品</view>
+    </view>
+  </view>
+  <!-- 列表 -->
+  <view class="bg" wx:else>
+    <checkbox-group bindchange="checkboxChange">
+      <view class="list_bg">
+        <view wx:for="{{dataList}}" wx:key="index" class="left_bg" data-item="{{item}}">
+          <view class="view_checkbox checkbox checkwords">
+            <checkbox value="{{item.skuId}}" checked="{{item.checked}}" />
+          </view>
+          <view class="img_box">
+            <image class="image" src="{{item.pictureUrl?item.pictureUrl:'../../images/clothes.png'}}"></image>
+          </view>
+          <view class="item">
+            <view class="title_bg">
+              <text class="title" style="margin-left:0rpx">{{item.skuName}}</text>
+              <view class="lab">款号: {{item.itemNo}}</view>
+              <view class="lab">货号: {{item.productCode}}</view>
+            </view>
+            <view class="title_r">
+              <!-- <view class="lab">序号:{{item.sort}}</view> -->
+              <view class="lab">{{item.spec}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </checkbox-group>
+  </view>
+
+  <!-- 底部按钮 -->
+  <view class="footer">
+    <view class="footer_num">
+      <text class="footer_num_text">已选中 <text class="num">{{checkedLength}}</text> 条</text>
+    </view>
+    <view class="footer_add" bindtap="add">添加</view>
+  </view>
+
+</view>

@@ -1,0 +1,36 @@
+<!--pages/back/backList.wxml-->
+<view class="page">
+	<view></view>
+
+	<view wx:for="{{list}}" wx:key="unique" class="list_bg" bindtap="itemClick" data-item="{{item}}">
+		<view class="headr">
+			<view class="detail payType">
+				客户:{{item.customerName}}
+			</view>
+			<view class="detail">
+				{{item.orderNo}}
+			</view>
+		</view>
+
+		<view class="content">
+			<view class="upText">{{item.quantity}}</view>件
+			<view class="upText">
+				¥{{item.amount}}
+			</view>
+		</view>
+
+		<view class="headr">
+			<view class="detail">
+				{{item.createTime}}
+			</view>
+			<view class="detail payType">
+				{{item.settlementMethod == "CASH_SETTLEMENT"?"现结":"挂账"}}
+			</view>
+		</view>
+	</view>
+
+	<view class="bottom"></view>
+	<view class="pos_fixed">
+		<navigator class="lable" url="../../pages/back/add_backInfo" hover-class="navigator-hover"> 新增退货单</navigator>
+	</view>
+</view>

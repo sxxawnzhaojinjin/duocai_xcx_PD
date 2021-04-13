@@ -1,0 +1,87 @@
+/* pages/login/index.wxss */
+page{
+  background-color: #FFF;
+}
+.bg{
+  display: flex;
+  flex-direction: column;
+}
+.logo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.logo_img{
+  height: 144rpx;
+  width: 144rpx;
+}
+.input_bg{
+  margin-top: 100rpx;
+  background-color: white;
+  display: flex;
+  min-height: 80rpx;
+  align-items: center;
+  padding:10rpx;
+  margin-left: 22rpx;
+  border-bottom: 3rpx solid;
+  border-color: #EEE;
+  
+}
+.input{
+  border-width: 1rpx;
+  border-radius: 10rpx;
+  background-color: white;
+}
+
+.next{
+  margin-top: 20rpx;
+}
+
+.button{
+  background-color: #1A50B2;
+  width:80%;
+  font-size: 30rpx;
+  height: 80rpx;
+  border-radius: 50rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10%;
+  margin-top: 50rpx;
+  color: #FFF;
+}
+.detail_bg{
+  display: flex;
+  align-items: center;
+  margin:22rpx;
+}
+.detail{
+  font-size: 24rpx;
+  color: #999;
+  display: flex;
+}
+.text{
+  color:#1A50B2;
+}
+.icon_d{
+  height: 30rpx;
+  width: 30rpx;
+  margin: 22rpx;
+  margin-right: 10rpx;
+}
+
+.icon{
+  height: 40rpx;
+  width: 40rpx;
+  margin:0rpx 20rpx;
+}
+
+.callphone{
+  position: fixed;
+  bottom:50rpx;
+  width:100%;
+  text-align: center;
+justify-content: center;
+}

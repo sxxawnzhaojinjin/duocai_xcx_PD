@@ -1,0 +1,24 @@
+<!--pages/login/index.wxml-->
+<view class="bg">
+	<view class="logo"><image src="../../images/shop.png" class="logo_img"></image></view>
+	<view class="input_bg">
+		<image mode="aspectFit" class="icon" src="../../images/mine.png"></image>
+		<input  maxlength="18" class="input" value="{{phone}}" bindinput="setPhone" placeholder="请输入账号"></input>
+	</view>
+
+	<view class="input_bg next">
+		<image mode="aspectFit" class="icon" src="../../images/password.png"></image>
+		<input  maxlength="12" class="input" password="true" value="{{password}}" bindinput="setPassword" placeholder="请输入密码"></input>
+	</view>
+
+	<view class="button" bindtap="submit">
+		登录
+	</view>
+
+	<view class="detail_bg">
+		<image src="../../images/select.png" class="icon_d"></image>
+		<view class="detail">已同意<view class="text">《用户许可协议》</view></view>
+	</view>
+
+	<view class="detail callphone" bindtap="callPhone" data-phone="13335422306">客服电话:<view class="text">13335422306</view></view>
+</view>

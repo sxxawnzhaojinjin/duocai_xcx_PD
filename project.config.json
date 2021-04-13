@@ -1,0 +1,80 @@
+{
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": false,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "nodeModules": false,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "useIsolateContext": true,
+    "useCompilerModule": false,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "useMultiFrameRuntime": true,
+    "bundle": false,
+    "useApiHook": true,
+    "useApiHostProcess": false
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.12.0",
+  "appid": "wx3f8212610b3e0e1a",
+  "projectname": "duocai_xcx_PD",
+  "debugOptions": {
+    "hidedInDevtools": []
+  },
+  "isGameTourist": false,
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "采购入库",
+          "pathName": "pages/purchase_new/purchase_goods",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "采购入库详情",
+          "pathName": "pages/purchase_new/purchase_goodsInfo",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "蓝牙",
+          "pathName": "pages/printTag_new/index",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

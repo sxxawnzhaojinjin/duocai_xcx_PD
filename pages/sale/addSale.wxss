@@ -1,0 +1,93 @@
+/* pages/sale/addSale.wxss */
+.bg{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 130rpx;
+  color:#333;
+}
+.item_a{
+  background-color: #FFF;
+  display: flex;
+  justify-content: space-between;
+  padding:10rpx 22rpx;
+  font-size: 28rpx;
+  min-height: 60rpx;
+  align-items: center;
+  margin-top: 3rpx;
+  border-radius: 5rpx;
+}
+.item_r{
+  display: flex;
+}
+.title{
+  font-size: 28rpx;
+  background-color: transparent;
+
+}
+.content_bg{
+  display: flex;
+  flex-direction: column;
+  background-color: #EEE;
+  padding:22rpx;
+  justify-content: center;
+}
+.item_c{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36rpx;
+  color: #1A50B2;
+  margin:22rpx
+}
+
+.input{
+  text-align: right;
+  margin-right: 22rpx;
+  border: 3rpx solid #eee;
+  max-width: 120rpx;
+  border-radius: 5rpx;
+  padding-right: 10rpx;
+}
+.pay_bg{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.pay_item{
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  margin-right: 20rpx;
+}
+
+.btn_v{
+  position: fixed;
+  display: flex;
+  bottom: 40rpx;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.btn{
+  display: flex;
+  width:35%;
+  height: 80rpx;
+  background-color: #1A50B2;
+  color: #FFF;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin:0rpx 30rpx;
+  border-radius: 40rpx;
+}
+.redColor{
+  background-color: tomato;
+}
+
+.pic{
+  height: 80rpx;
+  width: 80rpx;
+  vertical-align: middle;
+  border-radius: 10rpx;
+  background-color: rgba(255, 255, 158, 0.514);
+}

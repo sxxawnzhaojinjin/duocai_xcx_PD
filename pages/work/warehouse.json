@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "采购入库",
+  "usingComponents": {},
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance":50
+}

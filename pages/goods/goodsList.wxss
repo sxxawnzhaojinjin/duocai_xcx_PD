@@ -1,0 +1,114 @@
+@import "../../css/common.wxss";
+page {
+  background-color: #F1F3F5;
+}
+
+.bg {
+  display: flex;
+  flex-direction: column;
+  background-color: #F1F3F5;
+  width: 100%;
+  padding-top: 95rpx;
+}
+
+.list_bg {
+  flex-direction: column;
+  display: flex;
+  background-color: #F1F3F5;
+}
+
+.item {
+  background-color: white;
+  border-radius: 10rpx;
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.image {
+  display: flex;
+  margin-top: 10rpx;
+  margin-left: 10rpx;
+  height: 120rpx;
+  width: 120rpx;
+  border-radius: 10rpx;
+  background-color: rgba(255, 255, 158, 0.514);
+}
+
+.title_bg {
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+  padding: 15rpx 0rpx;
+  justify-content: space-between;
+}
+
+.left_bg {
+  display: flex;
+  justify-content: flex-start;
+  background-color: #fff;
+  margin: 5rpx 20rpx;
+  border-radius: 10rpx;
+}
+
+.title {
+  color: #1A50B2;
+  font-size: 28rpx;
+  margin-left: 20rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 500rpx;
+}
+
+.lab {
+  color: #999;
+  font-size: 24rpx;
+}
+
+.price {
+  color: #ec7259;
+}
+
+.title_r {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: #999;
+  font-size: 24rpx;
+}
+
+.next {
+  height: 30rpx;
+  width: 30rpx;
+  margin-right: 20rpx;
+}
+
+.up_bg {
+  position: fixed;
+  bottom: 80rpx;
+  right: 50rpx;
+  z-index: 22;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  justify-items: center;
+  flex-direction: column;
+}
+
+.up_item {
+  display: flex;
+  border-radius: 40rpx;
+  background-color: #1A50B2;
+  width: 70rpx;
+  height: 70rpx;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  margin-top: 20rpx;
+}
+
+.up_icon {
+  width: 40rpx;
+  height: 40rpx;
+}

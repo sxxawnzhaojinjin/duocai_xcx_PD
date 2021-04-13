@@ -1,0 +1,21 @@
+<view class="content">
+    <view class="colorType_box" wx:for="{{colorList}}" wx:for-item="item"   wx:for-index="idx">
+        <view class="colorType_title">
+            <text>{{item.colourName}}</text>
+            <checkbox value="{{idx}}" bindtap="selectall" checked="{{item.checkAll}}"  data-index="{{idx}}"/>全选
+        </view>
+        <view class="colorType_list">
+            <checkbox-group bindchange="checkboxChange" data-item="{{item.children}}" data-index="{{idx}}">
+              <label class="colorType_label" wx:for='{{item.children}}' wx:for-item="childItem"  wx:for-index="idx2">
+                <view class="colorType_checkbox">
+                  <checkbox value="{{childItem.colourId}}" checked="{{childItem.checked}}"/>
+                  <text>{{childItem.colourName}}</text>
+                </view>
+              </label>
+            </checkbox-group>
+        </view>
+    </view> 
+    <view class="common_button" bindtap="submit">保存</view>
+</view>
+
+

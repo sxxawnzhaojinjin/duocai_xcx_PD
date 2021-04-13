@@ -1,0 +1,145 @@
+<view class="print_container {{dataList.length == 0 ? 'height100' : ''}}">
+  <!-- 无数据 -->
+  <view class="noData_box" wx:if="{{dataList.length == 0}}">
+    <view class="noData_info">
+      <view>
+        <image mode="aspectFit" src="../../images/print/noData.png" class="noData_img"></image>
+      </view>
+      <view class="noData_text">没有任何可以打印的商品</view>
+      <view class="addGoods" bindtap="goPrintGoodsList">添加商品</view>
+    </view>
+  </view>
+  <!-- 列表 -->
+  <view class="cart {{showModal ? 'noscoll' :''}}" wx:else>
+    <view class="content list_bg" wx:if="{{dataList.length>0}}">
+      <!-- 通过 isTouchMove 的值来对应移动位置-->
+      <view class="item_list {{item.isTouchMove ? 'touch-move-active' : ''}}" wx:for="{{dataList}}" wx:key="index">
+        <view class="item-left customer-list" data-index='{{index}}' bindtouchstart="touchStart"
+          bindtouchmove="touchMove" animation='{{item.animation}}' data-item="{{item}}" bindtap="itemClick"
+          data-id="{{item.skuId}}">
+          <image class="image" src="{{item.pictureUrl?item.pictureUrl:'../../images/clothes.png'}}"></image>
+          <view class="item">
+            <view class="title_bg">
+              <text class="title" style="margin-left:0rpx">{{item.skuName}}</text>
+              <view class="lab">款号: {{item.itemNo}}</view>
+              <view class="lab">货号: {{item.productCode}}</view>
+            </view>
+            <view class="title_r">
+              <view class="lab">序号:{{index+1}}</view>
+              <view class="lab">{{item.spec}}</view>
+            </view>
+          </view>
+        </view>
+        <view class="delete">
+          <text class="text_see delete_text" data-id="{{item.skuId}}" bindtap="see">查看合格证</text>
+          <text class="text_delete delete_text" data-id="{{item.id}}" bindtap="delItem">移除</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 模态框 -->
+  <view class="modal_mask" bindtap="hideModal" wx:if="{{showModal}}"></view>
+  <view wx:if="{{showModal}}" class="modal_box">
+    <block wx:if="{{modalId == 1}}">
+      <view class="box">
+        <view class="print_model_title">打印条码</view>
+        <view class="print_model_box">
+          <view class="print_model_image">
+            <image src="{{printTagInfo.pictureUrl?printTagInfo.pictureUrl:'../../images/clothes.png'}}"
+              class="print_model_img"></image>
+          </view>
+          <view class="print_model_info">
+            <view>
+              <view class="print_model_info_name">{{printTagInfo.skuName}}</view>
+            </view>
+            <view style="display:flex">
+              <view style="flex:2;">
+                <view>款号：{{printTagInfo.itemNo}}</view>
+                <view>货号：{{printTagInfo.productCode}}</view>
+              </view>
+              <view style="flex:1;text-align: center;">{{printTagInfo.color}}/{{printTagInfo.size}}</view>
+            </view>
+
+
+          </view>
+          <!-- <view class="print_model_size">{{printTagInfo.color}}/{{printTagInfo.size}}</view> -->
+        </view>
+        <view class="print_model_num">
+          <text class="print_num_title" decode="{{true}}" space="{{true}}">打印数量&nbsp;&nbsp;</text>
+          <input type="number" placeholder="请输入" class="input" placeholder-style="color: #CCCCCC;" maxlength="5"
+            value="{{printNum}}" bindinput="printNum_input" bindblur="printNum_blur" />
+          <text class="print_num_fen" decode="{{true}}" space="{{true}}">&nbsp;&nbsp;份</text>
+        </view>
+        <view class="print_model_footer">
+          <view class="print_model_cancel" bindtap="cancel">取消</view>
+          <view class="print_model_start" bindtap="startPrintBtn" data-item="{{printTagInfo}}">开始打印</view>
+        </view>
+
+      </view>
+    </block>
+
+    <!-- 查看合格证 -->
+    <block wx:if="{{modalId == 2}}">
+      <view class="certificate_box">
+        <view class="certificate_box_close" bindtap="close">x</view>
+        <view class="certificate_box_title">合格证</view>
+        <view class="certificate_box_info">
+          <view class="certificate_box_lf">
+            <view>款号：{{printTagInfo.itemNo}}</view>
+            <view>名称：{{printTagInfo.skuName}}</view>
+            <view>尺寸：{{printTagInfo.size}}</view>
+            <view>颜色：{{printTagInfo.color}}</view>
+            <view>等级：合格证</view>
+            <view>执行标准：FZ/T81007-2012</view>
+            <view>安全类别：GB18401-2010</view>
+            <view class="product_composit_list">
+              产品成分：
+              <view class="list_a">
+                <text>{{printTagInfo.materials || '--'}}</text>
+                <!-- <text>39.6%粘胶纤维</text>
+                <text>18.3%棉纶</text>
+                <text>42.1%聚酯纤维</text> -->
+              </view>
+            </view>
+          </view>
+          <view class="certificate_box_rt">
+            <image mode="aspectFit" src="../../images/print/jian.jpg" class="sanjiaoImg"></image>
+          </view>
+
+        </view>
+        <view class="certificate_box_icon">
+          <view class="view_icon">
+            <image mode="aspectFit" src="../../images/print/icon1.png" class="icon"></image>
+            <view>常规水洗</view>
+          </view>
+          <view class="view_icon">
+            <image mode="aspectFit" src="../../images/print/icon2.png" class="icon"></image>
+            <view>常规水洗</view>
+          </view>
+          <view class="view_icon">
+            <image mode="aspectFit" src="../../images/print/icon3.png" class="icon"></image>
+            <view>常规水洗</view>
+          </view>
+          <view class="view_icon">
+            <image mode="aspectFit" src="../../images/print/icon4.png" class="icon"></image>
+            <view>常规水洗</view>
+          </view>
+        </view>
+        <view class="code_box">
+          <image mode="widthFix" src="{{printTagInfo.barCode}}" class="code"></image>
+        </view>
+        <view class="certificate_footer">经销商：西安卓资时尚信息技术有限公司</view>
+        <view class="certificate_footer">地址：陕西省西安市新城区长缨西路464号</view>
+      </view>
+    </block>
+  </view>
+
+
+  <!-- 底部按钮 -->
+  <view class="footer" wx:if="{{dataList.length != 0}}">
+    <view class="footer_empty" bindtap="emptyBtn">清空</view>
+    <view class="footer_add" bindtap="goPrintGoodsList">添加货品</view>
+  </view>
+
+</view>

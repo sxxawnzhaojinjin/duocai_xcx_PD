@@ -1,0 +1,161 @@
+page{
+  background-color: #f3f3f3;
+}
+
+.detail{
+  display: flex;
+  justify-content: space-between;
+}
+.title{
+  flex:1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  white-space: nowrap;
+
+}
+.left_bg{
+  display: flex;
+  justify-content: flex-start;
+  background-color: #fff;
+  margin: 5rpx 20rpx;
+}
+.item{
+  background-color: white;
+  margin:0rpx 10rpx;
+  border-radius: 10rpx;
+  margin-top: 10rpx;
+  display: flex;
+}
+.image{
+  margin-top: 10rpx;
+  margin-left: 10rpx;
+  height: 120rpx;
+  width: 120rpx;
+  border-radius: 10rpx;
+  background-color: rgba(255, 255, 158, 0.514);
+}
+.title_bg{
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top:20rpx;
+  margin-bottom: 20rpx;
+  width: 80%;
+}
+
+.title_a{
+  color:#1A50B2;
+  font-size: 28rpx;
+  text-align: left;
+  text-overflow: ellipsis;
+  max-width: 80%;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+  display: -webkit-box;
+  overflow: hidden;
+}
+.lab{
+  color:#999;
+  font-size: 24rpx;
+}
+
+
+
+.c_bg{
+  display: flex;
+  flex-direction: column;
+}
+
+.color{
+  margin-left: 50rpx;
+}
+
+.row_a{
+  display: flex;
+  margin: 20rpx;
+  font-size: 24rpx;
+  align-items: center;
+  color:#666;
+}
+.detail_title{
+  margin-left: 20rpx;
+  color: #333;
+  font-size: 24rpx;
+}
+.input{
+  border-width: 10rpx;
+  border-radius: 5rpx;
+  background-color: #f3f3f3;
+  padding-left: 5rpx;
+  padding-right: 5rpx;
+  margin-left: 20rpx;
+  display: flex;
+  height: 60rpx;
+  width: 120rpx;
+  text-align: center;
+}
+.cc{
+  display: flex;
+}
+
+.row_b{
+  display: flex;
+  align-items: center;
+}
+
+.btn_a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5rpx;
+  height: 50rpx;
+  width: 50rpx;
+  margin-left: 20rpx;
+  font-size: 50rpx;
+  border: 3rpx solid;
+  border-color: #1A50B2;
+  color: #1A50B2;
+  text-align: center;
+  
+}
+.enableColor{
+  color:#1A50B2;
+}
+.disAbleColor{
+  color:#999;
+}
+.list_bg{
+  margin-bottom: 100rpx;
+  font-size: 24rpx;
+}
+.list_item{
+  margin: 20rpx 10rpx 0rpx 10rpx;
+  padding-left: 20rpx;
+  background-color: #FFF;
+  padding:20rpx;
+  border-radius: 5rpx;
+  
+}
+
+.button{
+  font-size: 30rpx;
+  bottom: 100rpx;
+  position: fixed;
+  background-color: #1A50B2;
+  width:80%;
+  height: 80rpx;
+  border-radius: 50rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10%;
+  color: #FFF;
+  bottom: 10rpx;
+  z-index: 2000;
+}
+

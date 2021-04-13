@@ -1,0 +1,29 @@
+<view class='account-container'>
+	<view class="swiper_contain">
+		<view class="total">
+			<view class="total_content">
+				<text>累计收入: {{countInfo.incomesOfAll}}元</text>
+				<text>累计欠款: {{countInfo.arrearsOfAll}}元</text>
+			</view>
+		</view>
+	</view>
+  <!-- 列表 -->
+	<view class="bg">
+		<view class="list_bg">
+			<view wx:for="{{list}}" class="left_bg" bindtap="itemClick" wx:key="index" data-item="{{item}}">
+				<view class="item">
+					<view class="title_bg">
+						<text class="title" style="margin-left:0rpx">客户: {{item.customerName}}</text>
+						<view class="lab">
+                已付金额: <text class="title">{{item.paid}}</text>
+                欠款金额: <text class="title">{{item.arrears}}</text>
+            </view>
+					</view>
+					<view class="title_r">
+						<image mode="aspectFit" class="next" src="../../images/next.png"></image>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

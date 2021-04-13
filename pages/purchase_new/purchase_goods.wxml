@@ -1,0 +1,70 @@
+<view class="container_box" bindtap="outBtn">
+  <view class="purchase_container">
+    <view class="noData_box">
+      <view class="purchase_nav">
+        <view catchtap="addGoodsBtn">添加商品</view>
+        <view catchtap="addScanCodeBtn">扫码添加</view>
+      </view>
+      <!-- 无数据 -->
+      <view class="noData_info" wx:if="{{goodsList.length == 0}}">
+        <view>
+          <image mode="aspectFit" src="../../images/print/noData.png" class="noData_img"></image>
+        </view>
+        <view class="noData_text">请添加入库商品</view>
+      </view>
+      <!-- 列表 -->
+      <view class="purchase_goodsListBox item {{item.isTouchMove ? 'touch-move-active' : ''}}"
+        wx:if="{{goodsList.length>0}}" wx:key="index" wx:for="{{goodsList}}">
+        <view class="item-left purchase_goodsList" data-id="{{item.skuId}}" data-index='{{index}}'
+          bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd" animation='{{item.animation}}'>
+          <view class="list_pic">
+            <image mode="aspectFit" src="{{item.pictureUrl ? item.pictureUrl : '../../images/clothes.png'}}"
+              class="goods_pic"></image>
+          </view>
+          <view class="list_info">
+            <view class="goods_title">{{item.itemName}}</view>
+            <view class="goods_itemNo">{{item.productCode}}</view>
+            <view class="goods_info">
+              <view>{{item.skuSize}}</view>
+              <view>{{item.colour}}</view>
+              <view class="goods_info_num">
+                <text>入库数量</text>
+                <input type="number" value="{{item.quantity}}" class="goods_info_input" data-index="{{index}}"
+                  bindinput="changeNum" bindblur="changeNum_blur" maxlength="6" />
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="delete" data-id="{{item.skuId}}" catchtap="delItem">删除</view>
+      </view>
+    </view>
+    <!-- 底部按钮 -->
+    <view class="footer">
+      <view class="footer_num search_box">
+        <view>采购人员</view>
+        <view>
+          <view class="classify-kuangjia">
+            <view class="classify-kuangjia2">
+              <!-- 下拉框 -->
+              <view class='classify' catchtap='bindShowMsg'>
+                <text>{{search_name}}</text>
+                <image class="classify-tupian" src='../../images/down.png' wx:if="{{!select}}"></image>
+                <image class="classify-tupian" src='../../images/up.png' wx:else></image>
+                <!-- 下拉需要显示的列表 -->
+                <view class="select_box {{listLength > 2 ? 'h200' : ''}}" wx:if="{{select}}">
+                  <block wx:for="{{search_list}}" wx:key="unique">
+                    <view class="select_one" catchtap="mySelect" data-name="{{item.name}}" data-id="{{item.id}}">
+                      {{item.name}}
+                    </view>
+                  </block>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="footer_add" catchtap="submit">确认入库</view>
+    </view>
+  </view>
+
+</view>

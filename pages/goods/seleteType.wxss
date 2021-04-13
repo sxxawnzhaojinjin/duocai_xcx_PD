@@ -1,0 +1,75 @@
+/* pages/goods/seleteType.wxss */
+
+.bg {
+  display: flex;
+  flex-direction: column;
+  font-size: 28rpx;
+}
+
+.title {
+  height: 40rpx;
+  background-color: #FFF;
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  padding:10rpx 20rpx;
+  color: #666;
+}
+.right{
+  text-align: right;
+}
+
+.list_bg {
+  display: flex;
+}
+
+.list_left {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  background-color: #FFF;
+  border-right: 3rpx solid #EEE;
+}
+
+.list_item {
+  border: 1rpx solid #eee;
+  display: flex;
+  height: 60rpx;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 98%;
+
+}
+
+.select {
+  color: #1A50B2;
+  border: 3rpx solid #1A50B2;
+}
+
+.hide {
+}
+
+.size_box {
+  display: flex;
+flex-wrap: wrap;
+flex-direction: row;
+justify-content: space-around;
+height: 100%;
+}
+
+
+.sizeItem {
+  min-width: 100rpx;
+  height: 50rpx;
+  font-size: 28rpx;
+  display: flex;
+  background-color: #FFF;
+  border-radius: 5rpx;
+  margin: 10rpx;
+  align-items: center;
+  justify-content: center;
+}

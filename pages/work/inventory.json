@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "商品库存",
+  "usingComponents": {},
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance":50
+}

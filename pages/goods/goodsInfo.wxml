@@ -1,0 +1,163 @@
+<form bindsubmit="formSubmit" report-submit='true'>
+	<view class='addAddress'>
+		<view class='list'>
+			<view class='imgItem acea-row row-between-wrapper'>
+				<view class='name redStar'>货品图片</view>
+				<view class="avatar">
+					<image class="img" src="{{itemPhoto == '' ? personImage : itemPhoto}}" mode="aspecFill"
+						bindtap="changeAvatar"></image>
+				</view>
+			</view>
+
+
+			<view class='item acea-row row-between-wrapper'>
+				<view class='name redStar'>货品名称</view>
+				<input type='text' placeholder='请输入货品名称' maxlength="20" name='itemName' value="{{itemName}}"
+					placeholder-class='placeholder'></input>
+			</view>
+
+			<view wx:if="{{itemId !==''}}" class='item acea-row row-between-wrapper'>
+				<view class='name redStar'>货品号</view>
+				<input type='text' disabled="true" name='itemNo' placeholder="{{itemNo}}"
+					placeholder-class='placeholder'></input>
+			</view>
+			<view class='item acea-row row-between-wrapper'>
+				<view class='name redStar'>发货价</view>
+				<input type='text' placeholder='请输入发货价格' type="digit" bindinput="priceTap" data-index="purchasePrice"
+					maxlength="9" name='purchasePrice' value="{{data.purchasePrice}}" placeholder-class='placeholder'></input>
+			</view>
+			<view class='item acea-row row-between-wrapper'>
+				<view class='name redStar'>建议售价</view>
+				<input type='text' placeholder='请输入建议售价' type="digit" bindinput="priceTap" data-index="suggestedPrice"
+					maxlength="9" name='suggestedPrice' value="{{data.suggestedPrice}}" placeholder-class='placeholder'></input>
+			</view>
+
+			<view class='item acea-row row-between-wrapper' bindtap="goCategory">
+				<view class='name redStar'>分类</view>
+				<input type='text' placeholder='请选择分类' name='sizes' disabled="true" value="{{categoryName}}"
+					placeholder-class='placeholder'></input>
+				<image mode="aspectFit" class="next" src="../../images/next.png"></image>
+			</view>
+
+
+			<view class='item acea-row row-between-wrapper' bindtap="goSizeSelete">
+				<view class='name redStar'>尺码</view>
+				<input type='text' placeholder='{{size.length > 0?"":"请选择尺码"}}' disabled="true"
+					placeholder-class='placeholder'></input>
+				<image mode="aspectFit" class="next" src="../../images/next.png"></image>
+			</view>
+
+			<view wx:if="{{size.length > 0}}" class='size_box'>
+				<view wx:for="{{size}}" wx:key="unique" class="sizeItem">{{item}}</view>
+			</view>
+
+			<view class='item acea-row row-between-wrapper' bindtap="goColorSeleteType">
+				<view class='name redStar'>颜色</view>
+				<input type='text' placeholder='{{color.length > 0?"":"请选择颜色"}}' disabled="true"
+					placeholder-class='placeholder'></input>
+				<image mode="aspectFit" class="next" src="../../images/next.png"></image>
+			</view>
+
+			<view wx:if="{{color.length > 0}}" class='size_box' style="margin-top:10rpx">
+				<view wx:for="{{color}}" wx:key="unique" class="sizeItem">{{item}}</view>
+			</view>
+			<view class='item acea-row row-between-wrapper '>
+				<view class='name redStar'>生产年份</view>
+				<picker mode="date" fields="year" start="{{startYear}}" end="{{endYear}}"  value="{{year}}" name='year' bindchange="changeDate">
+					<view class="picker" class="{{year==''?'yearselect':''}}">
+						{{year==""?"请选择生产年份":year}}
+					</view>
+				</picker>
+			</view>
+			<view class='textarea_item acea-row row-between-wrapper'>
+				<view class='textarea_name redStar'>产品成分</view>
+				<textarea class="text_abc" placeholder-class='placeholder' value="{{materialsName}}" name="materialsName"
+					placeholder='请输入产品成分' maxlength="40" auto-height bindinput="operateProductComponent"></textarea>
+			</view>
+			
+			<view class="line"></view>
+
+			<view bindtap="showMore" class="more">
+				(可选){{isShow?"收起":"展开"}}
+				<image class="item_icon" src="{{!isShow?'../../images/noMore.png':'../../images/more.png'}}" />
+			</view>
+
+			<view wx:if="{{isShow}}">
+				<!--非必填-->
+				<view class='item acea-row row-between-wrapper' bindtap="goPage" data-index="1">
+					<view class='name'>品牌</view>
+					<!-- <picker class="cybm_pic_1" value="{{brandList[brandIndex].brandId}}"
+						data-selecthx="{{brandList[brandIndex].chineseName}}" range="{{brandList}}" range-key="{{'chineseName'}}"
+						data-name='brandName' bindchange="bindPickerChange">
+						<input type='text' placeholder='请选择品牌' name='brandName' value="{{brandName}}"
+							placeholder-class='placeholder' disabled></input>
+					</picker> -->
+					<input type='text' placeholder='请选择品牌' name='brandName' value="{{brandName}}" placeholder-class='placeholder'
+						disabled></input>
+					<image mode="aspectFit" class="next" src="../../images/next.png"></image>
+				</view>
+				<view class='item acea-row row-between-wrapper' bindtap="goPage" data-index="2">
+					<view class='name'>风格</view>
+					<!-- <picker class="cybm_pic_1" value="{{styleList[styleIndex].styleId}}"
+						data-selecthx="{{styleList[styleIndex].styleName}}" range="{{styleList}}" range-key="{{'styleName'}}"
+						data-name='styleName' bindchange="bindPickerChange">
+						<input type='text' placeholder='请选择风格' name='styleName' value="{{styleName}}"
+							placeholder-class='placeholder' disabled></input>
+					</picker> -->
+					<input type='text' placeholder='请选择风格' name='styleName' value="{{styleName}}" placeholder-class='placeholder'
+						disabled></input>
+					<image mode="aspectFit" class="next" src="../../images/next.png"></image>
+				</view>
+				<view class='item acea-row row-between-wrapper' bindtap="goPage" data-index="3">
+					<view class='name'>季节</view>
+					<!-- <picker class="cybm_pic_1" value="{{seasonList[seasonIndex].seasonId}}"
+						data-selecthx="{{seasonList[seasonIndex].seasonName}}" range="{{seasonList}}" range-key="{{'seasonName'}}"
+						data-name='seasonName' bindchange="bindPickerChange">
+						<input type='text' placeholder='请选择季节' name='seasonName' value="{{seasonName}}"
+							placeholder-class='placeholder' disabled></input>
+					</picker> -->
+					<input type='text' placeholder='请选择季节' name='seasonName' value="{{seasonName}}"
+						placeholder-class='placeholder' disabled></input>
+					<image mode="aspectFit" class="next" src="../../images/next.png"></image>
+				</view>
+				<!-- <view class='item acea-row row-between-wrapper' bindtap="goPage" data-index="4">
+					<view class='name'>面料</view>
+					<input type='text' placeholder='请选择面料' name='materialsName' value="{{materialsName}}"
+							placeholder-class='placeholder' disabled></input>
+					<image mode="aspectFit" class="next" src="../../images/next.png"></image>
+				</view> -->
+
+				<view class='item acea-row row-between-wrapper'>
+					<view class='name'>产地</view>
+					<input type='text' placeholder='请输入产地' name='addr' value="{{data.addr}}"
+						placeholder-class='placeholder'></input>
+				</view>
+			</view>
+
+		</view>
+
+		<!-- 新增入库 -->
+		<!-- <view class="addWarehouse" wx:if="{{isEdit}}">入库列表</view> -->
+
+		<view class="addWarehouse" bindtap="addWarehouse" wx:if="{{!isEdit}}">新增入库</view>
+		<!-- sku列表 -->
+		<view class="table-box" wx:if="{{isWarehouse}}">
+			<view class="table-title">
+				<view wx:for="{{thList}}" wx:key="index">{{item}}</view>
+			</view>
+			<view class="table-list" wx:for="{{tdList}}" wx:for-item="item" wx:key="index">
+				<view>{{item.size}}</view>
+				<view>{{item.colour}}</view>
+				<view wx:if="{{isEdit}}">{{item.stock}}</view>
+				<view class="number" wx:else>
+					<view class="btn_a" catchtap="ridClilck" data-item="{{index}}" style="margin-left: 20rpx;">-</view>
+					<input type='number' maxlength="6" class="input" bindinput="changeNumber" data-item="{{index}}"
+						value="{{item.stock}}" disabled="{{isEdit}}"></input>
+					<view class="btn_a" catchtap="addClilck" data-item="{{index}}" style="margin-right:20rpx">+</view>
+				</view>
+			</view>
+		</view>
+
+		<button class='keepBnt bg-color' formType="submit" disabled="{{isClick}}">保存商品入库</button>
+	</view>
+</form>

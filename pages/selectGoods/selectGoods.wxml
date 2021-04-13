@@ -1,0 +1,107 @@
+<!--pages/work/orderDetail.wxml-->
+
+<view class="bg">
+	<view class="item">
+		<view class="item_itemName">
+			{{itemName}}
+		</view>
+		<view class="right">
+			<view style="margin-right:20rpx">
+				库存:{{stockTotal}}
+			</view>
+			<view>
+				{{isSale == 1?"(荐)":""}}单价:¥{{suggestedPrice}}
+			</view>
+		</view>
+	</view>
+	<view class="list_bg">
+		<view wx:for="{{list}}" class="list_item" wx:key="index">
+
+			<view class="row_a mind_cont">
+				<view class="bt_left">
+					<view>货号:</view>
+					<view class="detail_title">{{item.productCode}}</view>
+				</view>
+				<!-- <view wx:if="{{isSale == 2}}" bindtap="changeReturnType" data-item="{{item}}" class="bt_left">
+					<view>
+						次品
+					</view>
+					<image  src="{{item.returnType == 'SUBSTANDARD' ?'../../images/select.png':'../../images/unSelect.png'}}" class="item_icon"></image>
+				</view> -->
+
+
+			</view>
+			<view class="row_a">
+				<view class="cc">尺寸:<view class="detail_title">{{item.skuSize}}</view>
+				</view>
+				<view class="cc color">颜色:<view class="detail_title">{{item.colour}}</view>
+				</view>
+			</view>
+
+			<view class="row_a">
+				<view>系统库存:</view>
+				<view class="detail_title">{{item.stock}}</view>
+				<!-- <view class="row_b" style="margin-left:150rpx">
+				<view class="btn_a" bindtap="ridClilck" data-item="{{item}}" >-</view>
+				<view class="btn_a" bindtap="addClilck" data-item="{{item}}" style="margin-left:50rpx">+</view>
+			</view> -->
+			</view>
+
+			<view class="row_a">
+				<view>{{isSale == 1?"销售":"退货"}}数量:</view>
+				<view class="row_b">
+					<view class="btn_a {{item.number <= 0?'unEnable':''}}" style="margin-left:20rpx" bindtap="ridClilck"
+						data-item="{{item}}">-</view>
+					<input disabled="{{isSale == 1?item.stock <= 0?true:false:false}}" type='number' maxlength="6" class="input"
+						bindinput="changeNumber" data-item="{{item}}" placeholder="{{item.number}}" value="{{item.number}}"></input>
+					<view class="btn_a {{isSale == 1 ?item.number >= item.stock?'unEnable':'':''}}" bindtap="addClilck"
+						data-item="{{item}}">+</view>
+
+				</view>
+			</view>
+
+
+			<view wx:if="{{isSale != 1}}" class="row_a">
+				<view>{{isSale == 1?"销售":"退货"}}价格:</view>
+				<view class="row_b">
+					<view class="btn_a {{item.number <= 0?'unEnable':''}}" style="margin-left:20rpx" bindtap="ridPriceClilck"
+						data-item="{{item}}">-</view>
+					<input disabled="{{isSale == 1?item.actualAmount <= 0?true:false:false}}" type="digit" maxlength="6"
+						class="input" bindinput="changePrice" data-item="{{item}}" placeholder="{{item.actualAmount}}"
+						value="{{tools.toNumber(item.actualAmount) }}"></input>
+					<view class="btn_a }}" bindtap="addPriceClilck" data-item="{{item}}">+</view>
+
+				</view>
+			</view>
+
+
+		</view>
+
+	</view>
+
+
+	<view class="button" bindtap="submit">
+		确定
+	</view>
+
+	<view class="sum">
+
+		<view class="right sumRight">
+			<view style="margin-right:20rpx">
+				共:{{sum}}
+			</view>
+			<view>
+				合计:¥{{sumPrice}}
+			</view>
+		</view>
+		<view style="height:90rpx"></view>
+	</view>
+
+</view>
+
+<wxs module="tools">
+	var toNumber = function (text) {
+		return text
+	};
+	module.exports.toNumber = toNumber;
+</wxs>

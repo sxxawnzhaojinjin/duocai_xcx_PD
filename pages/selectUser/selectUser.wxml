@@ -1,0 +1,18 @@
+<!--pages/selectUser/selectUser.wxml-->
+<view class="bg">
+	<view class="list_bg">
+		<view bindtap="selectUser" data-item="{{item}}" wx:for="{{list}}" wx:key='unique' class="list_item">
+			<view class="name">
+				<image src="../../images/customer.png" class="icon" />
+				<view>{{item.customerName}}</view>
+			</view>
+			<view class="right">
+				<view class="phone">{{item.contactPhone || ""}}
+				</view>
+				<!-- <view class="detail">联系人:{{item.contactPerson}}
+				</view> -->
+			</view>
+
+		</view>
+	</view>
+</view>

@@ -1,0 +1,93 @@
+<view class="bg">
+  <view class="item">
+    <image class="image" src="{{pictureUrl?pictureUrl:'../../images/clothes.png'}}"></image>
+    <view class="title_bg">
+      <view class="title_a">{{itemName}}</view>
+      <view class="lab">{{itemNo}}</view>
+    </view>
+  </view>
+  <!-- <view class="list_bg">
+    <view wx:for="{{list}}" class="list_item" wx:key="index">
+      <view class="row_a">
+        <view>货号:</view>
+        <view class="detail_title">{{item.productCode}}</view>
+      </view>
+      <view class="row_a">
+        <view class="cc">尺寸:<view class="detail_title">{{item.skuSize}}</view>
+        </view>
+        <view class="cc color">颜色:<view class="detail_title">{{item.colour}}</view>
+        </view>
+      </view>
+      <view class="row_a">
+        <view>系统库存:</view>
+        <view class="detail_title">{{item.stock}}</view>
+      </view>
+      <view class="row_a">
+        <view>入库数量:</view>
+        <view class="row_b">
+          <view class="btn_a" style="margin-left:20rpx" bindtap="ridClilck" data-item="{{item}}">-</view>
+          <input type='number' maxlength="6" class="input" bindinput="changeNumber" data-item="{{item}}"
+            placeholder="{{item.number}}" value="{{item.number}}"></input>
+          <view class="btn_a" bindtap="addClilck" data-item="{{item}}">+</view>
+        </view>
+      </view>
+    </view>
+  </view> -->
+
+
+  <!-- 表格 -->
+  <!-- <scroll-view scroll-x="true" class='scrollClass'>
+    <view class='table' wx:for="{{rightList}}" wx:key="index">
+      <view class='table_header'>
+        <view class="th" style='width:130rpx;background-color:white'>
+          <view class='centerclass cell_label'>款号</view>
+        </view>
+        <view class='th' wx:for="{{item.th}}" wx:for-item="thItem">
+          <view class="cell_label centerclass">{{thItem}}</view>
+        </view>
+      </view>
+      <view class='table_main' wx:for="{{item.tr}}" wx:for-item="trItem">
+        <view class='td' style='width:130rpx;background-color:white;'>
+          <view class="cell_label centerclass">{{trItem.name}}</view>
+        </view>
+        <view class='td' wx:for="{{item.list}}" wx:for-item="listItem">
+          <view class='table_Text_class'>
+            <input type='number' value="{{listItem.quantity}}"></input>
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </scroll-view> -->
+
+  <scroll-view scroll-x="true" class='scrollClass'>
+    <view class='table'>
+      <block wx:for="{{arryList}}" wx:for-index="idx" wx:for-item="item" wx:key="index">
+        <view class='table_header' wx:if="{{idx==0}}">
+          <view class="th" style='width:130rpx;background-color:white'>
+            <view class='centerclass cell_label'></view>
+          </view>
+          <view class='th' wx:for="{{item.sku}}" wx:for-item="item_top" wx:key='index'>
+            <view class="cell_label centerclass">{{item_top}}</view>
+          </view>
+        </view>
+        <view class='table_main' wx:else>
+          <view class='td' style='width:130rpx;background-color:white;'>
+            <view class="cell_label centerclass">{{item.item_left}}</view>
+          </view>
+          <view class='td' wx:for="{{item.sku}}" wx:for-item="item_top2" wx:for-index="idx2" wx:key='index'>
+            <view class='table_Text_class'>
+              <input type='number' value="{{item_top2.quantity}}" bindinput="changeNum" bindblur="changeNum_blur"
+                data-index2="{{idx2}}" data-index="{{idx}}" class="input_quantity" maxlength="6"></input>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+
+  <!-- 底部 -->
+  <view class="common_button" bindtap="submit">
+    确认
+  </view>
+</view>

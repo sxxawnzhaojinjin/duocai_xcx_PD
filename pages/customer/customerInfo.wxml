@@ -1,0 +1,25 @@
+<form bindsubmit="formSubmit" report-submit='true'>
+	<view class='addAddress'>
+		<view class='list'>
+			<view class='item acea-row row-between-wrapper'>
+				<view class='name'>姓名</view>
+				<input type='text' placeholder='请输入姓名' name='customerName' value="{{data.customerName}}" placeholder-class='placeholder'></input>
+			</view>
+			<view class='item acea-row row-between-wrapper' catchtap="hideKeyBorder">
+				<view class='name'>性别</view>
+				<picker bindchange="bindPickerChange" value="{{index}}" range="{{genderList}}">
+					<input type='text' disabled="true" placeholder='请选择性别' name='gender' value="{{genderList[index]}}" placeholder-class='placeholder'></input>
+				</picker>
+			</view>
+			<view class='item acea-row row-between-wrapper'>
+				<view class='name'>联系电话</view>
+				<input type='text' placeholder='请输入联系电话' name="contactPhone" maxlength="11" type="number" value='{{data.contactPhone}}' placeholder-class='placeholder'></input>
+			</view>
+			<view class='item acea-row row-between-wrapper'>
+				<view class='name'>详细地址</view>
+				<input type='text' placeholder='请填写详细地址' name='address' placeholder-class='placeholder' value='{{data.address}}'></input>
+			</view>
+		</view>
+		<button class='keepBnt bg-color' formType="submit">立即保存</button>
+	</view>
+</form>

@@ -1,0 +1,129 @@
+<!--pages/sale/addSale.wxml-->
+<view class="bg">
+
+	<view class="item_a">
+		<view>
+			销售员
+		</view>
+		<view style="margin-right:20rpx">
+			{{contact.saleBy || ""}}
+		</view>
+	</view>
+
+	<view class="item_a">
+		<view>
+			客户
+		</view>
+		<view class="item_r">
+			<view style="margin-right:20rpx">
+				{{contact.customerName}}
+			</view>
+		</view>
+	</view>
+
+
+	<view class="content_bg">
+		<view class=" item_a title" style="padding-left:0rpx">
+			<view>货品信息</view>
+			<image class="item_icon" bindtap="showMore" src="{{!isShow?'../../images/noMore.png':'../../images/more.png'}}" />
+		</view>
+
+		<view wx:if="{{isShow}}" wx:for="{{goodsList}}" class="item_a">
+			<view>
+				{{item.itemName}}
+			</view>
+			<view>
+				{{item.colour}}/{{item.skuSize}}
+			</view>
+			<view class="item_r">
+				<view class="item_r">
+					<view style="margin-right:40rpx">
+						{{item.returnType == "NORMAL"?"(正常)":"(次品)"}}{{item.number}}件
+					</view>
+
+					<view>
+						¥{{item.actualAmount}}
+					</view>
+
+				</view>
+			</view>
+		</view>
+
+	</view>
+
+	<view class="item_a">
+		<view>
+			合计
+		</view>
+		<view>
+
+		</view>
+		<view class="item_r">
+			<view style="margin-right:40rpx">
+				共{{sumNumber}}件
+			</view>
+
+			<view style="margin-right:20rpx">
+				共:¥{{sumPrice}}
+			</view>
+
+		</view>
+	</view>
+	<!-- 	
+	<view class="item_a">
+		<view>
+			退货数量
+		</view>
+		<view style="margin-right:20rpx">
+			1
+		</view>
+	</view> -->
+
+	<!-- <view class="item_a">
+		<view>
+			应退金额
+		</view>
+		<view style="margin-right:20rpx">
+			100.00
+		</view>
+	</view> -->
+	<view class="item_a">
+		<view>
+			实退金额
+		</view>
+		<view style="margin-right:20rpx">
+			¥{{relPrice}}
+		</view>
+	</view>
+	<view class="item_a">
+		<view>
+			退款方式
+		</view>
+		<view style="margin-right:20rpx">
+			{{settlementMethodString == "CASH_SETTLEMENT"?"现结":"挂账"}}
+		</view>
+	</view>
+	<!-- <view class="content_bg">
+		<view class="item_a title" style="padding-left:0rpx">
+			<view>支付方式</view>
+		</view>
+		<view class="pay_bg">
+			<view class="pay_item">
+				<image mode="aspectFit" src="{{payType==0?'../../images/select.png':'../../images/unSelect.png'}}" class="item_icon" />
+				<view style="margin-left:20rpx">微信</view>
+			</view>
+			<view class="pay_item">
+				<image mode="aspectFit" src="{{payType==1?'../../images/select.png':'../../images/unSelect.png'}}" class="item_icon" />
+				<view style="margin-left:20rpx">支付宝</view>
+			</view>
+			<view class="pay_item">
+				<image mode="aspectFit" src="{{payType==2?'../../images/select.png':'../../images/unSelect.png'}}" class="item_icon" />
+				<view style="margin-left:20rpx">现金</view>
+			</view>
+			<view class="pay_item">
+				<image mode="aspectFit" src="{{payType==3?'../../images/select.png':'../../images/unSelect.png'}}" class="item_icon" />
+				<view style="margin-left:20rpx">银联</view>
+			</view>
+		</view>
+	</view> -->
+</view>

@@ -1,0 +1,81 @@
+<wxs module="utils">
+  module.exports.max = function (n1, n2) {
+    return Math.max(n1, n2)
+  }
+  module.exports.len = function (arr) {
+    arr = arr || [];
+    return arr.length;
+  }
+</wxs>
+<view class="container_bluetooth" bindtap="outBtn">
+  <view style="position:fixed;top:9999rpx;">
+    <canvas style="width: {{canvasWidth}}px; height: {{canvasHeight}}px;margin:0 auto;"
+      canvas-id="secondCanvas"></canvas>
+    <canvas style="width: {{canvasWidth_b}}px; height: {{canvasHeight_b}}px;margin:0 auto;"
+      canvas-id="secondCanvas_b"></canvas>
+  </view>
+  <!-- 蓝牙优化样式 -->
+  <view class="bluetooth_nav">
+    <view class="search_box">
+      <view>
+        <view class="classify-kuangjia">
+          <view class="classify-kuangjia2">
+            <view class='classify' catchtap='bindShowMsg'>
+              <!-- <text class="printer_name" wx:if="{{lastDeviceName && !isTrue}}">{{lastDeviceName +'(上次连接)'}}</text>
+              <text class="printer_name" wx:else>{{name == lastDeviceName ? name + '(上次连接)' : name}}</text> -->
+              <text class="printer_name">{{name == lastDeviceName ? name + '(上次连接)' : name}}</text>
+              <image class="classify-tupian" src='../../images/down.png' wx:if="{{!select}}"></image>
+              <image class="classify-tupian" src='../../images/up.png' wx:else></image>
+              <view class="select_box {{listLength > 7 ? 'h600' : ''}}" wx:if="{{select}}">
+                <block wx:for="{{devices}}" wx:key="index" wx:for-index="idx">
+                  <view class="select_one" catchtap="createBLEConnection" data-device-id="{{item.deviceId}}"
+                    data-name="{{item.name || item.localName}}">
+                    {{item.name == lastDeviceName ? item.name + '(上次连接)' : item.name}}
+                  </view>
+                </block>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view>
+        <view class="findPrinter_Btn" catchtap="openBluetoothAdapter">查找打印机</view>
+      </view>
+      <view>
+        <view class="stopFindPrinter_Btn" catchtap="stopBluetoothDevicesDiscovery">停止查找</view>
+      </view>
+    </view>
+
+    <!-- <view><text style="font-size: 30rpx">已连接到 {{name == '请选择打印机' ? '' : name}}</text></view>
+    <view wx:if="{{lastDevice}}">
+      <text style="font-size: 30rpx">最近连接的打印机</text>
+      <view>{{lastDevice}}</view>
+      <view class="btn-area">
+      <button type="primary" bindtap="createBLEConnectionWithDeviceId">直接连接</button>
+    </view>
+    </view> -->
+
+  </view>
+
+  <!-- 底部按钮 -->
+  <view class="footer">
+    <block wx:if="{{!isPrint}}">
+      <block wx:if="{{isInitializePrint}}">
+        <view class="print_disabled">
+          打印
+        </view>
+      </block>
+      <block wx:elif="{{!isClick}}">
+        <view catchtap="writeBLECharacteristicValue" class="print">
+          打印
+        </view>
+      </block>
+    </block>
+    <block wx:else>
+      <view class="print_disabled">
+        已打印
+      </view>
+    </block>
+  </view>
+
+</view>

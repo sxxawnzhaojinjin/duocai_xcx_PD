@@ -1,0 +1,56 @@
+<view class="bg">
+	<image class="bg_image" src="../../images/bg.png"></image>
+	<view mode="aspectFit" class="header" src="../../images/bg.png">
+		<image class="user" src="../../images/shop.png"></image>
+		<view class="lab">{{storeName}}</view>
+	</view>
+	<view class="inventory_box">
+		<view class="inventory_title">库存管理</view>
+		<view class="inventory_list">
+			<view class="inventory_tab" data-index="1" bindtap="goTab">
+				<view>
+					<image class="img" src="../../images/kucun.png"></image>
+				</view>
+				<view class="title">商品库存</view>
+			</view>
+			<view class="inventory_tab" data-index="2" bindtap="goTab">
+				<view>
+					<image class="img" src="../../images/ruku.png"></image>
+				</view>
+				<view class="title">采购入库</view>
+			</view>
+			<view class="inventory_tab" data-index="3" bindtap="goTab">
+				<view>
+					<image class="img" src="../../images/rukudan.png"></image>
+				</view>
+				<view class="title">入库单</view>
+			</view>
+			<view class="inventory_tab" data-index="4" bindtap="goTab">
+				<view>
+					<image class="img" src="../../images/chuku.png"></image>
+				</view>
+				<view class="title">出库</view>
+			</view>
+			<view class="inventory_tab" data-index="5" bindtap="goTab">
+				<view>
+					<image class="img" src="../../images/chukudan.png"></image>
+				</view>
+				<view class="title">出库单</view>
+			</view>
+			<view class="inventory_tab" data-index="5" bindtap="goTab">
+				<view>
+					<image class="img" src="../../images/chukudan.png"></image>
+				</view>
+				<view class="title">备货</view>
+			</view>
+			<view class="inventory_tab" data-index="5" bindtap="goTab">
+				<view>
+					<image class="img" src="../../images/chukudan.png"></image>
+				</view>
+				<view class="title">备货单</view>
+			</view>
+
+		</view>
+	</view>
+
+</view>

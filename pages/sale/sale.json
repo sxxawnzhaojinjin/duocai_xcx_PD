@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "销售单",
+  "usingComponents": {},
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance":50
+
+}

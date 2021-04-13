@@ -1,0 +1,64 @@
+<view class="container_box" bindtap="outBtn">
+	<!-- 搜索 -->
+	<view class="search_view">
+		<view class="search_box">
+			<view>
+				<view class="classify-kuangjia">
+					<view class="classify-kuangjia2">
+						<!-- 下拉框 -->
+						<view class='classify' catchtap='bindShowMsg'>
+							<text>{{search_name}}</text>
+							<image class="classify-tupian" src='../../images/down.png' wx:if="{{!select}}"></image>
+							<image class="classify-tupian" src='../../images/up.png' wx:else></image>
+							<!-- 下拉需要显示的列表 -->
+							<view class="select_box" wx:if="{{select}}">
+								<view wx:for="{{search_list}}" wx:key="unique">
+									<view class="select_one" catchtap="mySelect" data-name="{{item}}">{{item}}</view>
+								</view>
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view>
+				<input type='text' placeholder='请输入内容' name='search' placeholder-class='placeholder' value='{{search}}'
+					class="search_input" bindinput="searchInput_Btn"></input>
+			</view>
+		</view>
+		<view class="time_box">
+			<view class="time_picker">
+				<picker mode="date" value="{{date}}" start="2018-01-01" end="{{nowDate}}" bindchange="bindDateChange">
+					<view class="picker">
+						<input disabled type='text' value='{{date}}' placeholder='请选择搜索日期' placeholder-class='placeholder'></input>
+					</view>
+				</picker>
+				<image src="../../images/print/remove.png" class="remove_icon" wx:if="{{date}}" catchtap="removeDate"
+					:hover-stop-propagation="true"></image>
+			</view>
+			<view class="search_btn" catchtap="searchBtn">
+				搜索
+			</view>
+		</view>
+	</view>
+	<!-- 列表 -->
+	<view class="bg">
+		<view class="list_bg">
+			<view wx:for="{{dataList}}" class="left_bg" catchtap="itemClick" wx:key="index" data-item="{{item}}">
+				<!-- <image class="image" src="{{item.pictureUrl?item.pictureUrl:'../../images/clothes.png'}}"></image> -->
+				<view class="image" wx:if="{{false}}">{{index+1}}</view>
+				<view class="item">
+					<view class="title_bg">
+						<text class="title" style="margin-left:0rpx">{{item.entryNo}}</text>
+						<view class="lab">{{item.createTime}}</view>
+						<!-- <view class="lab">库存:<text class="title">{{item.stockSum}}</text></view> -->
+					</view>
+					<view class="title_r">
+						<text class="title_r_text" wx:if="{{false}}">{{item.byUser}}</text>
+						<image mode="aspectFit" class="next" src="../../images/next.png"></image>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+
+</view>

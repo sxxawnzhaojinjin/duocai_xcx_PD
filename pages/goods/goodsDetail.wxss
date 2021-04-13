@@ -1,0 +1,167 @@
+/* pages/goods/goodsDetail.wxss */
+.bg{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 130rpx;
+  color:#333;
+  font-size: 28rpx;
+}
+.item_a{
+  background-color: #FFF;
+  display: flex;
+  justify-content: space-between;
+  padding:10rpx 22rpx;
+  font-size: 28rpx;
+  min-height: 60rpx;
+  align-items: center;
+  margin-top: 3rpx;
+  border-radius: 5rpx;
+}
+.title_r{
+  margin-right: 20rpx;
+}
+.size_box {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  color: #1A50B2;
+  margin: 10rpx;
+
+}
+.sizeItem{
+  border: 3rpx solid #1A50B2;
+  min-width: 80rpx;
+  text-align: center;
+  border-radius: 5rpx;
+  margin: 20rpx;
+  padding:5rpx;
+}
+.left_title{
+  font-size: 28rpx;
+  color: #999;
+  margin: 20rpx;
+
+}
+.image_photo{
+  height: 150rpx;
+  width: 150rpx;
+  border-radius: 10rpx;
+  background-color: rgba(255, 255, 158, 0.514);
+}
+.image_bg{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin:22rpx;
+
+}
+.more {
+  display: flex;
+  margin: 22rpx;
+  justify-content: flex-end;
+  font-size: 28rpx;
+  padding-bottom: 20rpx;
+}
+
+
+/** 入库表格 **/
+.table-box {
+  width: 100%;
+  background: #fff;
+}
+
+.table-title {
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border: 2rpx solid #999;
+
+}
+
+.table-list {
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border: 2rpx solid #999;
+  border-top: none;
+}
+
+.table-title view,
+.table-list view {
+  width: 33.333%;
+  text-align: center;
+}
+
+.table-title view:nth-child(2),
+.table-list view:nth-child(2) {
+  border: 2rpx solid #999;
+  border-top: none;
+  border-bottom: none;
+}
+
+
+.row_b {
+  display: flex;
+  align-items: center;
+}
+
+.btn_a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5rpx;
+  height: 50rpx;
+  width: 50rpx;
+  /* margin-left: 20rpx; */
+  font-size: 50rpx;
+  border: 3rpx solid;
+  border-color: #1A50B2;
+  color: #1A50B2;
+  text-align: center;
+
+}
+
+.input {
+  border-width: 10rpx;
+  border-radius: 5rpx;
+  background-color: #fff;
+  padding-left: 5rpx;
+  padding-right: 5rpx;
+  margin:0 20rpx;
+  display: flex;
+  height: 60rpx;
+  width: 120rpx;
+  text-align: center;
+}
+
+.number {
+  display: flex;
+  align-items: center;
+}
+
+.table-box view {
+  box-sizing: border-box;
+  font-size: 28rpx;
+}
+
+.addWarehouse {
+  margin: 20rpx auto;
+  width: 40%;
+  text-align: center;
+  color: #999;
+  font-size: 28rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-radius: 10rpx;
+  border: 2rpx dashed #999;
+}

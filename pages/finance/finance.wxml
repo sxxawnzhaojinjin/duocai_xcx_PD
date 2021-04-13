@@ -1,0 +1,62 @@
+<view class='ticket-container'>
+   <scroll-view scroll-y bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" class="swiper_contain" scroll-top="{{scrollTop}}">
+		<!--Tab布局-->
+		<view class='title'>
+			<view class="{{0 == currentIndex ? 'title-sel-selected' : 'title-sel'}}" bindtap='titleClick' data-idx='0'>
+				<text>收入</text>
+				<hr class="line-style" />
+			</view>
+			<view class="{{1 == currentIndex ? 'title-sel-selected' : 'title-sel'}}" bindtap='titleClick' data-idx='1'>
+				<text>支出</text>
+				<hr class="line-style" />
+			</view>
+		</view>
+
+		<!--内容布局-->
+		<!-- style="min-height:{{deviceheight}}px;"-->
+		<swiper class='swiper' bindchange='pagechange' current='{{currentIndex}}'>
+			<!--收入-->
+			<swiper-item class='swiper'>
+				<view class="swiper_contain">
+					   <view class="total">
+						    <view class="total_content">
+								 <text>历史累收：{{countInfo.incomesOfAll}}元</text>
+								 <text>本月累收：{{countInfo.incomesCurrentMonth}}元</text>
+								</view>
+						 </view>
+						 <view class="list" wx:if="{{list.length>0}}">
+						    <view class="list_content border" wx:for="{{list}}" wx:for-item="item" wx:key="index">
+									<text>销售</text>
+									<text>+{{item.amount}}</text>
+									<text>{{item.createTime}}</text>
+								</view>
+						 </view>
+						  <view class="list" wx:else style="text-align: center;">
+						   无历史数据
+						 </view>
+				</view>
+			</swiper-item>
+			<!--支出-->
+			<swiper-item class='swiper'>
+				<view class="swiper_contain">
+					<view class="total">
+						    <view class="total_content">
+								 <text>历史支出：{{countInfo2.salesOfAll}}元</text>
+								 <text>本月支出：{{countInfo2.salesOfCurrentMonth}}元</text>
+								</view>
+						 </view>
+						 <view class="list" wx:if="{{list2.length>0}}">
+						    <view class="list_content border" wx:for="{{list2}}" wx:for-item="item" wx:key="index">
+									<text>退货</text>
+									<text>-{{item.amount}}</text>
+								  <text>{{item.createTime}}</text>
+								</view>
+						 </view>
+						  <view class="list" wx:else style="text-align: center;">
+						   无历史数据
+						 </view>
+				</view>
+			</swiper-item>
+		</swiper>
+	</scroll-view>
+</view>

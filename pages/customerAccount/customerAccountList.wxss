@@ -1,0 +1,103 @@
+text{
+  font-size: 28rpx;
+  color: #333;
+}
+
+.swiper_contain {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  /* margin-bottom: 100rpx; */
+}
+
+.total {
+  margin: 20rpx;
+  /* border: 1rpx solid #E5E5E5; */
+  border-radius: 30rpx;
+}
+
+.total_content {
+  padding: 20rpx;
+  background-color: #FFF;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+
+
+/* pages/work/index.wxss */
+page{
+  background-color: #f3f3f3;
+}
+.bg{
+  display: flex;
+  flex-direction: column;
+  background-color: #f3f3f3;
+  width: 100%;
+}
+.list_bg{
+  flex-direction: column;
+  display: flex;
+  background-color: #f3f3f3;
+}
+.item{
+  background-color: white;
+  border-radius: 10rpx;
+  display: flex;
+  justify-content: space-between;
+  flex:1;
+}
+.image{
+  display: flex;
+  margin-top: 10rpx;
+  margin-left: 10rpx;
+  height: 120rpx;
+  width: 120rpx;
+  border-radius: 10rpx;
+  background-color: rgba(255, 255, 158, 0.514);
+}
+.title_bg{
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+  padding:15rpx 0rpx;
+  justify-content: space-between;
+}
+.left_bg{
+  display: flex;
+  justify-content: flex-start;
+  background-color: #fff;
+  margin: 5rpx 20rpx;
+  border-radius: 10rpx;
+  height: 150rpx;
+}
+.title{
+  color:#1A50B2;
+  font-size: 28rpx;
+  margin-left: 20rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 300rpx;
+}
+.lab{
+  color:#999;
+  font-size: 24rpx;
+}
+
+
+.title_r{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: #999;
+  font-size: 24rpx;
+}
+.next{
+  height: 30rpx;
+  width:30rpx;
+  margin-right: 20rpx;
+}

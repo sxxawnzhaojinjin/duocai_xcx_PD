@@ -1,0 +1,308 @@
+page {
+  width: 100%;
+  height: 100%;
+  background-color: #F1F3F5;
+}
+
+.printGoodsList_container {
+  width: 100%;
+  padding-bottom: 150rpx;
+}
+
+
+/** 搜索 **/
+.nav {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 20rpx 0;
+}
+
+
+
+.box {
+  display: flex;
+  padding: 20rpx;
+  font-size: 28rpx;
+
+}
+
+.input_box {
+  display: flex;
+  flex: 1;
+  margin-right: 10rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.label {
+  flex: 0 0 130rpx;
+  /* flex: 1; */
+}
+
+.input {
+  flex: 3;
+  /* padding: 0 10rpx; */
+  border: 2rpx solid #CCCCCC;
+  border-radius: 8rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding-left: 10rpx;
+  padding-right: 50rpx;
+}
+
+.input_box2 {
+  display: flex;
+  flex: 1;
+  margin-left: 10rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.label2 {
+  /* flex: 1; */
+  flex: 0 0 75rpx;
+}
+
+.input2 {
+  flex: 3;
+  border: 2rpx solid #CCCCCC;
+  border-radius: 8rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding-left: 10rpx;
+  padding-right: 50rpx;
+}
+
+.placeholder {
+  color: #CCCCCC;
+}
+
+.input_search {
+  border: 2rpx solid #507FDF;
+  color: #507FDF;
+  border-radius: 10rpx;
+  text-align: center;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  width: 140rpx;
+  background-color: #F5F8FD;
+  z-index: 10000;
+}
+
+.remove_icon {
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 5;
+}
+.input_list{
+  position: relative;
+}
+
+
+/** 无数据 **/
+.noData_box {
+  width: 100%;
+  height: 100%;
+}
+
+.noData_info {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  /*偏移*/
+  transform: translateY(-50%);
+}
+
+.noData_info view:nth-child(1) {
+  height: 200rpx;
+}
+
+.noData_info view:nth-child(2) {
+  margin: 40rpx 0;
+  font-size: 32rpx;
+}
+
+.noData_img {
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.noData_text {
+  color: #999999;
+  font-size: 28rpx;
+}
+
+
+/** 列表 **/
+.bg {
+  display: flex;
+  flex-direction: column;
+  background-color: #f3f3f3;
+  width: 100%;
+}
+
+.list_bg {
+  flex-direction: column;
+  display: flex;
+  background-color: #f3f3f3;
+}
+
+.img_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item {
+  background-color: white;
+  border-radius: 10rpx;
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.image {
+  height: 120rpx;
+  line-height: 120rpx;
+  width: 120rpx;
+  border-radius: 10rpx;
+  background-color: #D8D8D8;
+  text-align: center;
+}
+
+.title_bg {
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10rpx 0;
+}
+
+.left_bg {
+  display: flex;
+  justify-content: flex-start;
+  background-color: #fff;
+  border-top: 2rpx solid #F1F3F5;
+  height: 150rpx;
+}
+
+.title {
+  color: #1A50B2;
+  font-size: 32rpx;
+  margin-left: 20rpx;
+  width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /*文字溢出的部分隐藏并用省略号代替*/
+  white-space: nowrap;
+  /*文本不自动换行*/
+
+}
+
+.lab {
+  color: #999999;
+  font-size: 24rpx;
+}
+
+
+.title_r {
+  font-size: 24rpx;
+  color: #999999;
+  display: flex;
+  flex-direction: column;
+  padding: 10rpx 0rpx;
+  justify-content: space-between;
+  margin-right: 20rpx;
+  text-align: right;
+}
+
+.next {
+  height: 30rpx;
+  width: 30rpx;
+  margin-right: 20rpx;
+}
+
+.title_r_text {
+  /* margin-right: 40rpx;
+  font-size: 28rpx */
+}
+
+.view_checkbox {
+  text-align: center;
+  width: 32rpx;
+  height: 150rpx;
+  line-height: 150rpx;
+  margin: 0 20rpx;
+}
+
+
+/*checkbox 选项框大小  */
+checkbox .wx-checkbox-input {
+  width: 32rpx;
+  height: 32rpx;
+  border-radius: 8rpx;
+  border-color: #1A50B2;
+  vertical-align: middle;
+}
+
+/*checkbox选中后样式  */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  background: #1A50B2;
+}
+
+/*checkbox选中后图标样式  */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  width: 32rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #ffffff;
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}
+
+
+/**  底部 **/
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer_num {
+  width: 70%;
+  background-color: #ffffff;
+  color: #999999;
+  font-size: 28rpx;
+}
+
+.footer_num_text {
+  padding-left: 20rpx;
+  color: #999999;
+}
+
+.num {
+  color: #225FD9;
+}
+
+.footer_add {
+  width: 30%;
+  background-color: #1A50B2;
+  text-align: center;
+  color: #ffffff;
+  font-size: 32rpx;
+}

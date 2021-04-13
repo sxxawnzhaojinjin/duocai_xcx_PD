@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "出库",
+  "usingComponents": {},
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance":50
+}
